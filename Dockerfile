@@ -2,9 +2,9 @@ FROM python:3.7.2-alpine3.8 as base
 RUN apk update && apk add --no-cache ffmpeg
 
 FROM base as builder
-
-RUN apk add --no-cache --virtual .build-deps gcc musl-dev jq
-RUN pip wheel --wheel-dir=/root/wheels streamlink==$(wget -qO- https://api.github.com/repos/streamlink/streamlink/releases/latest | jq -r .tag_name)
+ARG VERSION
+RUN apk add --no-cache --virtual .build-deps gcc musl-dev
+RUN pip wheel --wheel-dir=/root/wheels streamlink==$VERSION
 RUN apk del .build-deps gcc musl-dev
 
 FROM base
