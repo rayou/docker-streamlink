@@ -1,7 +1,17 @@
-# docker-streamlink
-Docker image of [streamlink](https://github.com/streamlink/streamlink).
+[github]: https://github.com/rayou/docker-streamlink
+[app-github]: https://github.com/streamlink/streamlink
+[microbadger]: https://microbadger.com/images/rayou/streamlink
+[dockerstore]: https://hub.docker.com/r/rayou/streamlink
+[donation]: https://donorbox.org/rayou?amount=10
 
-Repository name in Docker Hub: [rayou/streamlink](https://hub.docker.com/r/rayou/streamlink)
+# docker-streamlink
+[![](https://images.microbadger.com/badges/image/rayou/streamlink.svg)][microbadger] [![](https://images.microbadger.com/badges/version/rayou/streamlink.svg)][microbadger] [![](https://img.shields.io/docker/stars/rayou/streamlink.svg)][dockerstore] [![](https://img.shields.io/badge/Donate-Donorbox-green.svg)][donation]
+
+Docker image of [streamlink][app-github].
+
+Repository name in Docker Hub: [rayou/streamlink][dockerstore]
+
+Repository name in Github: [rayou/docker-streamlink][github]
 
 # Build
 ```bash
@@ -20,3 +30,22 @@ $ docker run --rm -it rayou/streamlink:latest --help
 ```bash
 $ docker run --rm -it --entrypoint=/bin/sh rayou/streamlink:latest
 ```
+
+# Documentation
+- https://streamlink.github.io/#user-guide
+
+# Contributing
+
+PRs are welcome.
+
+# Author
+
+Ray Ou - yuhung.ou@live.com
+
+# Donation
+
+[![](https://d1iczxrky3cnb2.cloudfront.net/button-small-green.png)][donation]
+
+# License
+
+MIT.
