@@ -1,11 +1,10 @@
-FROM python:3.7.2-alpine3.8 as base
-RUN apk update && apk add --no-cache ffmpeg
+FROM python:3.9-alpine3.14 as base
+RUN apk update && apk add --no-cache ffmpeg libxslt-dev libxml2-dev
 
 FROM base as builder
 ARG VERSION
 RUN apk add --no-cache --virtual .build-deps gcc musl-dev
 RUN pip wheel --wheel-dir=/root/wheels streamlink==$VERSION
-RUN apk del .build-deps gcc musl-dev
 
 FROM base
 
